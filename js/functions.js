@@ -56,13 +56,26 @@ function isPolyndrom(string) {
 isPolyndrom('Лёша на полке клопа нашёл ');
 
 // Третья функция - до конца не решена!!!
-function extractNumbers(str) {
+function extractNumbers(string) {
   let numbers = '';
-  for (let i = 0; i < str.length; i++) {
-    if (!isNaN(str[i])) {
-      numbers += str[i];
+  const numberList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] in numberList) {
+      numbers += string[i].toString();
     }
   }
-  return numbers;
+  return numbers !== '' ? +numbers : NaN;
 }
+
 extractNumbers('агент 007');
+
+// function extractNumbers(str) {
+//   let numbers = '';
+//   for (let i = 0; i < str.length; i++) {
+//     if (!isNaN(str[i])) {
+//       numbers += str[i];
+//     } else {numbers = NaN}
+//   }
+//   return numbers;
+// }
+// console.log(extractNumbers('агент 007'));
